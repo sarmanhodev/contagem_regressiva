@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contagem Regressiva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!--JQUERY CDN-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="banner">
+        <video autoplay muted loop>
+            <source src="./img/background.mp4" type="video/mp4">
+        </video>
+
+        <div class="content">
+            <div class="row ">
+                <h1 class="text-center texto">
+                    💖Contagem Regressiva para você me pegar💖
+                </h1>
+            </div>
+            <br>
+            <div class="row">
+                <h1 class="text-center texto " id="timer"></h1>
+            </div>
+            <br>
+            <div style="cursor: pointer;  align-items: center;" title="Clique aqui" onclick="cantadas()"
+                class="row m-2">
+
+                <div class="col-auto">
+                    <h6 class="text-white fs-1" id="frases"></h6>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var data_final = new Date("Oct 13, 2023 20:30:00").getTime();
+        var x = setInterval(function () {
+            var data_atual = new Date().getTime();
+            var t = data_final - data_atual;
+            var days = Math.floor(t / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((t % (1000 * 60)) / 1000);
+            document.getElementById("timer").innerHTML = "Faltam " + days + " dias "
+                + hours + " horas " + minutes + " minutos e  " + seconds + " segundos ";
+            if (t < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "Parabéns! Chegou o grande dia!";
+            }
+        }, 1000);
+
+
+        function cantadas() {
+            const cantadas = ["Você é o Modem que me conecta 🥰", "Nem a mais potente placa de vídeo iria reproduzir os gráficos da sua beleza 💖",
+                "Vou criar uma pasta C:/Meu/Coração, e você será o único arquivo de extensão .AMR, sua linda!💖", "Você hackeou o Google? Porque qualquer coisa que eu procuro, sempre te encontro.😘",
+                "Me joga no Google, me chama de pesquisa e me diz que eu sou tudo aquilo que você procurava! 💖", "Moça, você é o HTML de meu coracao.com💖",
+                "Nenhuma placa de vídeo poderia renderizar os 100% de sua beleza😍", "Com você até o Word fica sem palavras🥰", "Me dá um Ctrl Alt Delete…acho que travei quando te vi😜",
+                "Me diz o teu IP para eu poder fazer um acesso remoto no teu coração😻", "Vou invadir seu coração, formatar todo rancor, instalar minha paixão e soltar o vírus do amor😍",
+                "Deixa eu ser a instância da sua classe love no seu objeto heart?🥰", "Se você fosse uma variável, seria um ponteiro que aponta para o endereço de memória do meu coração😘", "Você não é CSS, mas é puro estilo😉", "Você é o processador que a minha placa mãe pediu a Dell😎 "];
+
+            const numero = Math.floor(Math.random() * cantadas.length);
+            console.log(cantadas[numero]);
+            $("#frases").html("Clique na frase: " + cantadas[numero]);
+        }
+        cantadas();
+
+    </script>
+
+    <style>
+        body {
+
+            margin: 0;
+            padding: 0;
+            font-family: "Big Shoulders Display", cursive;
+            height: 100px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .banner .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .banner .content h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 40px;
+            text-transform: uppercase;
+            color: #ffff;
+        }
+
+        .texto {
+            font-family: "Arial Black", Gadget, sans-serif;
+            font-size: 33px;
+            letter-spacing: 0px;
+            word-spacing: 2px;
+            color: #FFFFFF;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: uppercase;
+        }
+    </style>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
