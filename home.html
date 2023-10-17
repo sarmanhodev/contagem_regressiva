@@ -30,12 +30,15 @@
             <br>
             <div style="cursor: pointer;  align-items: center;" title="Clique aqui" onclick="cantadas()"
                 class="row m-2">
-
-                <div class="col-auto">
-                    <h6 class="text-white fs-1" id="frases"></h6>
-                </div>
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/playlist/1GRBJO0sok2APiIf6KYIcd?utm_source=generator"
+                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
 
             </div>
+
+
         </div>
     </div>
 
@@ -43,7 +46,7 @@
 
 
     <script>
-        var data_final = new Date("Oct 13, 2023 20:30:00").getTime();
+        var data_final = new Date("Nov 17, 2023 20:30:00").getTime();
         var x = setInterval(function () {
             var data_atual = new Date().getTime();
             var t = data_final - data_atual;
@@ -61,18 +64,20 @@
 
 
         function cantadas() {
-            const cantadas = ["Você é o Modem que me conecta 🥰", "Nem a mais potente placa de vídeo iria reproduzir os gráficos da sua beleza 💖",
-                "Vou criar uma pasta C:/Meu/Coração, e você será o único arquivo de extensão .AMR, sua linda!💖", "Você hackeou o Google? Porque qualquer coisa que eu procuro, sempre te encontro.😘",
-                "Me joga no Google, me chama de pesquisa e me diz que eu sou tudo aquilo que você procurava! 💖", "Moça, você é o HTML de meu coracao.com💖",
-                "Nenhuma placa de vídeo poderia renderizar os 100% de sua beleza😍", "Com você até o Word fica sem palavras🥰", "Me dá um Ctrl Alt Delete…acho que travei quando te vi😜",
-                "Me diz o teu IP para eu poder fazer um acesso remoto no teu coração😻", "Vou invadir seu coração, formatar todo rancor, instalar minha paixão e soltar o vírus do amor😍",
-                "Deixa eu ser a instância da sua classe love no seu objeto heart?🥰", "Se você fosse uma variável, seria um ponteiro que aponta para o endereço de memória do meu coração😘", "Você não é CSS, mas é puro estilo😉", "Você é o processador que a minha placa mãe pediu a Dell😎 "];
+            const cantadas = ["Você não é fonte Itálica, mas estou caidinho por você.🥰", "Gata, eu não sou o Bulbasauro, mas quero te mostrar meu chicote de cipó, sua linda! 💖",
+                "Pra que aprender Python ou Java, se a única língua que me interessa é a sua💖", "Gata, você é o Pikachu? É porque sua beleza é eletrizante, sua linda!😘",
+                "Gata me chama de Pearl Harbor e me ataca de surpresa. 💖", "Você estudou em Hogwarts? Porque você sabe como mexer com minha varinha mágica.💖",
+                "Você é do Mortal Kombat? Porque sua beleza me deu fatality.😍", "Gata, me chama de Homem-Aranha e venha se enrolar na minha teia🥰", "Eu não sou o Bob Esponja, mas adoraria morar na fenda do seu biquíni.😜",
+                "Existe Star Wars e Star Trek, mas o que eu queria era Star com você😻", "Gata, posso até não ser cavaleiro de Atena, mas me dá uma chance que te mostro minha armadura. 😍",
+                "Você nõ é o pomo de ouro, mas eu quero muito te pegar🥰", "Gata, me chama de Titanic e me deixa afundar nos seus braços.😘", "Você não é CSS, mas é puro estilo😉",
+                "Não sou Treinador Pokemon, mas comigo você evolui!😎 ", "Você não é SGDB (Sistema Gerenciador de Banco de Dados), mas quero te dar um Insert😎"];
 
             const numero = Math.floor(Math.random() * cantadas.length);
             console.log(cantadas[numero]);
             $("#frases").html("Clique na frase: " + cantadas[numero]);
         }
         cantadas();
+
 
     </script>
 
