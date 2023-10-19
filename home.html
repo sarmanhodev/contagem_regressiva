@@ -28,18 +28,25 @@
                 <h1 class="text-center texto " id="timer"></h1>
             </div>
             <br>
-            <div style="cursor: pointer;  align-items: center;" title="Clique aqui" onclick="cantadas()"
-                class="row m-2">
-                <iframe style="border-radius:12px"
-                    src="https://open.spotify.com/embed/playlist/1GRBJO0sok2APiIf6KYIcd?utm_source=generator"
-                    width="100%" height="352" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"></iframe>
-
-            </div>
+            <div class="mx-auto p-2" style="width: 500px;">
+                <div class="row ">
+                    <div class="col-auto">
+                        <button class="glow-on-hover" onclick="cantadas()">CANTADAS</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="glow-on-hover" onclick="playlist()">PLAYLIST</button>
+                    </div>
+                    <br>
+                    <div style="cursor: pointer;  align-items: center; margin-top: 10px;" id="dados" class="row">
+    
+                    </div>
+                </div>
+              </div>
+           
 
 
         </div>
+
     </div>
 
 
@@ -69,24 +76,115 @@
                 "Gata me chama de Pearl Harbor e me ataca de surpresa. 💖", "Você estudou em Hogwarts? Porque você sabe como mexer com minha varinha mágica.💖",
                 "Você é do Mortal Kombat? Porque sua beleza me deu fatality.😍", "Gata, me chama de Homem-Aranha e venha se enrolar na minha teia🥰", "Eu não sou o Bob Esponja, mas adoraria morar na fenda do seu biquíni.😜",
                 "Existe Star Wars e Star Trek, mas o que eu queria era Star com você😻", "Gata, posso até não ser cavaleiro de Atena, mas me dá uma chance que te mostro minha armadura. 😍",
-                "Você nõ é o pomo de ouro, mas eu quero muito te pegar🥰", "Gata, me chama de Titanic e me deixa afundar nos seus braços.😘", "Você não é CSS, mas é puro estilo😉",
+                "Você não é o pomo de ouro, mas eu quero muito te pegar🥰", "Gata, me chama de Titanic e me deixa afundar nos seus braços.😘", "Você não é CSS, mas é puro estilo😉",
                 "Não sou Treinador Pokemon, mas comigo você evolui!😎 ", "Você não é SGDB (Sistema Gerenciador de Banco de Dados), mas quero te dar um Insert😎"];
 
             const numero = Math.floor(Math.random() * cantadas.length);
             console.log(cantadas[numero]);
-            $("#frases").html("Clique na frase: " + cantadas[numero]);
+            $("#dados").find("#playlist").remove();
+            $("#dados").html(`<h1 class='text-white' id="cantadas" onclick='cantadas()'>${cantadas[numero]}</h1>`);
         }
-        cantadas();
+
+        function playlist() {
+            $("#dados").find("#cantadas").remove();
+            $("#dados").html('<iframe style="border-radius:12px"\
+                    src="https://open.spotify.com/embed/playlist/1GRBJO0sok2APiIf6KYIcd?utm_source=generator"\
+                    width="500px" height="352" frameBorder="0" allowfullscreen=""\
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"\
+                    loading="lazy" id="playlist"></iframe>');
+
+        }
 
 
     </script>
 
     <style>
+        html,
         body {
             margin: 0;
             padding: 0;
-            font-family: "Big Shoulders Display", cursive;
-            height: 100px;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            font-family: cursive;
+        }
+
+        .divflex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .glow-on-hover {
+            width: 220px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:active {
+            color: #000
+        }
+
+        .glow-on-hover:active:after {
+            background: transparent;
+        }
+
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
         }
 
         .banner {
