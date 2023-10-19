@@ -12,40 +12,36 @@
 </head>
 
 <body>
+    <div class="container-fluid">
+        <div class="position-absolute top-50 start-50 translate-middle" style="z-index: 1;">
+            <div class="row" style="margin-top: 20px;">
+                <h1 class="text-center text-white" style="z-index: 1;">
+                    💖Contagem Regressiva para você me pegar💖
+                </h1>
+            </div>
+            <div class="row">
+                <h1 class="text-center text-white " style="z-index: 1;" id="timer"></h1>
+            </div>
+            <div class="row alinha_botoes">
+                <div class="col-auto m-1">
+                    <button class="glow-on-hover" style="z-index: 1;" onclick="cantadas()">CANTADAS</button>
+                </div>
+
+                <div class="col-auto m-1">
+                    <button class="glow-on-hover" style="z-index: 1;" onclick="playlist()">PLAYLIST</button>
+                </div>
+                <br>
+                <div style="cursor: pointer;  align-items: center; margin-top: 10px; z-index: 1;" id="dados"
+                    class="row m-1">
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="banner">
         <video autoplay muted loop>
             <source src="./img/background.mp4" type="video/mp4">
         </video>
-
-        <div class="content">
-            <div class="row ">
-                <h1 class="text-center texto">
-                    💖Contagem Regressiva para você me pegar💖
-                </h1>
-            </div>
-            <br>
-            <div class="row">
-                <h1 class="text-center texto " id="timer"></h1>
-            </div>
-            <br>
-            <div class="mx-auto p-2" style="width: 500px;">
-                <div class="row ">
-                    <div class="col-auto">
-                        <button class="glow-on-hover" onclick="cantadas()">CANTADAS</button>
-                    </div>
-                    <div class="col-auto">
-                        <button class="glow-on-hover" onclick="playlist()">PLAYLIST</button>
-                    </div>
-                    <br>
-                    <div style="cursor: pointer;  align-items: center; margin-top: 10px;" id="dados" class="row">
-    
-                    </div>
-                </div>
-              </div>
-           
-
-
-        </div>
 
     </div>
 
@@ -98,25 +94,61 @@
 
     </script>
 
+
     <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100vh;
+        .alinha_botoes {
+
+            overflow: hidden;
             display: flex;
-            flex-direction: row;
             justify-content: center;
             align-items: center;
-            background: #000;
-            font-family: cursive;
         }
 
-        .divflex {
+        .banner {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+        }
+
+        .banner video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .banner .content h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 40px;
+            text-transform: uppercase;
+            color: #ffff;
+        }
+
+        .texto {
+            font-family: "Arial Black", Gadget, sans-serif;
+            font-size: 33px;
+            letter-spacing: 0px;
+            word-spacing: 2px;
+            color: #FFFFFF;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: uppercase;
         }
 
         .glow-on-hover {
@@ -185,53 +217,6 @@
             100% {
                 background-position: 0 0;
             }
-        }
-
-        .banner {
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .banner video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-
-        .banner .content {
-            position: relative;
-            z-index: 1;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .banner .content h1 {
-            margin: 0;
-            padding: 0;
-            font-size: 40px;
-            text-transform: uppercase;
-            color: #ffff;
-        }
-
-        .texto {
-            font-family: "Arial Black", Gadget, sans-serif;
-            font-size: 33px;
-            letter-spacing: 0px;
-            word-spacing: 2px;
-            color: #FFFFFF;
-            font-weight: 700;
-            text-decoration: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: uppercase;
         }
     </style>
 </body>
