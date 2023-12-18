@@ -16,19 +16,15 @@
         <div class="position-absolute top-50 start-50 translate-middle" style="z-index: 1;">
             <div class="row" style="margin-top: 20px;">
                 <h1 class="text-center text-white" style="z-index: 1;">
-                    💖Contagem Regressiva para você me pegar💖
+                    💖Contagem Regressiva💖
                 </h1>
             </div>
             <div class="row">
                 <h1 class="text-center text-white " style="z-index: 1;" id="timer"></h1>
             </div>
             <div class="row alinha_botoes">
-                <div class="col-auto m-1">
+                <div class="col-auto mx-auto">
                     <button class="glow-on-hover" style="z-index: 1;" onclick="cantadas()">CANTADAS</button>
-                </div>
-
-                <div class="col-auto m-1">
-                    <button class="glow-on-hover" style="z-index: 1;" onclick="playlist()">PLAYLIST</button>
                 </div>
                 <br>
                 <div style="cursor: pointer;  align-items: center; margin-top: 10px; z-index: 1;" id="dados"
@@ -49,7 +45,7 @@
 
 
     <script>
-        var data_final = new Date("Nov 17, 2023 20:30:00").getTime();
+        var data_final = new Date("Dec 21, 2023 20:00:00").getTime();
         var x = setInterval(function () {
             var data_atual = new Date().getTime();
             var t = data_final - data_atual;
@@ -67,28 +63,18 @@
 
 
         function cantadas() {
-            const cantadas = ["Você não é fonte Itálica, mas estou caidinho por você.🥰", "Gata, eu não sou o Bulbasauro, mas quero te mostrar meu chicote de cipó, sua linda! 💖",
-                "Pra que aprender Python ou Java, se a única língua que me interessa é a sua💖", "Gata, você é o Pikachu? É porque sua beleza é eletrizante, sua linda!😘",
+            const cantadas = ["Gata, eu não sou o Bulbasauro, mas quero te mostrar meu chicote de cipó, sua linda! 💖", "Pra que aprender Python ou Java, se a única língua que me interessa é a sua💖", "Gata, você é o Pikachu? É porque sua beleza é eletrizante, sua linda!😘", "Você conhece o Mario? Então vem ser minha Peach!💖",
                 "Gata me chama de Pearl Harbor e me ataca de surpresa. 💖", "Você estudou em Hogwarts? Porque você sabe como mexer com minha varinha mágica.💖",
-                "Você é do Mortal Kombat? Porque sua beleza me deu fatality.😍", "Gata, me chama de Homem-Aranha e venha se enrolar na minha teia🥰", "Eu não sou o Bob Esponja, mas adoraria morar na fenda do seu biquíni.😜",
+                "Você é do Mortal Kombat? Porque sua beleza me deu fatality.😍", "Gata, você não é o Japão, mas eu quero dominar sua língua.😎" ,"Gata, me chama de Homem-Aranha e venha se enrolar na minha teia🥰", "Eu não sou o Bob Esponja, mas adoraria morar na fenda do seu biquíni.😜",
                 "Existe Star Wars e Star Trek, mas o que eu queria era Star com você😻", "Gata, posso até não ser cavaleiro de Atena, mas me dá uma chance que te mostro minha armadura. 😍",
                 "Você não é o pomo de ouro, mas eu quero muito te pegar🥰", "Gata, me chama de Titanic e me deixa afundar nos seus braços.😘", "Você não é CSS, mas é puro estilo😉",
-                "Não sou Treinador Pokemon, mas comigo você evolui!😎 ", "Você não é SGDB (Sistema Gerenciador de Banco de Dados), mas quero te dar um Insert😎"];
+                "Não sou Treinador Pokemon, mas comigo você evolui!😎", "Não existe placa de vídeo no mundo que possa reproduzir os gráficos de sua beleza🥰", "Doeu quando você caiu de Asgard, sua deusa?",
+                "Se você fosse um jogo, te salvaria no meu coração💖", "Eu não sou o Doutor Estranho, mas em 14 milhões de futuros eu só me vejo com você." , "Você não é o reator Arc, mas é o que faz meu coração bater.😎", "Você deve ser a joia da mente, porque não sai da minha cabeça.😎"];
 
             const numero = Math.floor(Math.random() * cantadas.length);
             console.log(cantadas[numero]);
             $("#dados").find("#playlist").remove();
             $("#dados").html(`<h1 class='text-white' id="cantadas" onclick='cantadas()'>${cantadas[numero]}</h1>`);
-        }
-
-        function playlist() {
-            $("#dados").find("#cantadas").remove();
-            $("#dados").html('<iframe style="border-radius:12px"\
-                    src="https://open.spotify.com/embed/playlist/1GRBJO0sok2APiIf6KYIcd?utm_source=generator"\
-                    width="500px" height="352" frameBorder="0" allowfullscreen=""\
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"\
-                    loading="lazy" id="playlist"></iframe>');
-
         }
 
 
